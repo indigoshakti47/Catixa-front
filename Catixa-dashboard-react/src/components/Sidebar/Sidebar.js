@@ -10,8 +10,6 @@ import {
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
-  DropdownToggle,
-  Media,
   NavbarBrand,
   Navbar,
   NavItem,

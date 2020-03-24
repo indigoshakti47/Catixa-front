@@ -23,7 +23,7 @@ class Profile extends React.Component {
       <>
         <UserHeader />
         {/* Page content */}
-        <Container className="mt--3" fluid>
+        <Container className="mt--9" fluid>
           <Row>
             <Col className="order-xl-1" xl="12">
               <Card className="bg-secondary shadow">
@@ -31,16 +31,6 @@ class Profile extends React.Component {
                   <Row className="align-items-center">
                     <Col xs="8">
                       <h3 className="mb-0">Registro de administradores</h3>
-                    </Col>
-                    <Col className="text-center" xs="4">
-                      <Button
-                        color="primary"
-                        href="#"
-                        onClick={e => e.preventDefault()}
-                        size="sm"
-                      >
-                        Crear usuario
-                      </Button>
                     </Col>
                   </Row>
                 </CardHeader>

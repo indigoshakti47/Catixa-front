@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 // reactstrap components
 import { Container, Row, Col } from "reactstrap";
 import {connect}from "react-redux"
+import Logo from "../assets/img/brand/catixa_white.png"
 
 // core components
 import AuthNavbar from "components/Navbars/AuthNavbar.js";
@@ -47,15 +48,15 @@ class Auth extends React.Component {
             <Container>
               <div className="header-body text-center mb-7">
                 <Row className="justify-content-center">
-                  <Col lg="1" md="4">
-                    <h1 className="text-white">Catixa</h1>
+                  <Col lg="3" md="4">
+                    <img width="210px;" src={Logo}></img>
                   </Col>
                 </Row>
               </div>
             </Container>
           </div>
           {/* Page content */}
-          <Container className="mt--8 pb-5">
+          <Container className="mt--9 pb-4">
             <Row className="justify-content-center">
               <Switch>
                 {this.getRoutes(routes)}
