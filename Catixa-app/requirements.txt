@@ -2,3 +2,7 @@ npm i -s react-native-gesture-handler
 npm i react-native-redux
 npm i react-native-router-flux --save
 npm i -s react-native-firebase
+npm install react-native-modal
+npm install react-native-screens
+npm install immutable
+npm install react-native-image-slider-show --save

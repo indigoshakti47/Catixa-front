@@ -2,13 +2,8 @@ import React from 'react'
 
 import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity} from 'react-native'
 import firebase from 'firebase'
-import { Field, reduxForm } from 'redux-form';
-import {
-  StackNavigator,
-} from 'react-navigation';
 
 import Logo from '../components/Logo';
-import InputText from "../components/InputText";
 
 
 export default class Login extends React.Component {
@@ -108,3 +103,4 @@ const styles = StyleSheet.create({
     textAlign: 'auto'
   }
 });
+

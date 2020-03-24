@@ -1,7 +1,7 @@
 import  firebase from "firebase";
 import 'firebase/database';
 
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyD575l_oaGodJjih78MAj8GGFWKagnYug8",
     authDomain: "catixa-6cf9b.firebaseapp.com",
     databaseURL: "https://catixa-6cf9b.firebaseio.com",
