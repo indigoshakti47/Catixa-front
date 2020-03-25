@@ -84,6 +84,10 @@ export default class App extends React.Component {
     this.setState({ modalVisible: true });
   }
 
+  toggleModa1() {
+    this.setState({ modalVisible: false });
+  }
+
   updatePan(toValue) {
 
     Animated.spring(this._pan, { toValue, friction: 7 }).start();
@@ -134,20 +138,20 @@ export default class App extends React.Component {
           <View style={{ flex: 1 }}>
             <Modal animationType={"slide"} 
               visible={this.state.modalVisible}
-              onRequestClose={() => { this.props.navigation.navigate('login'); }}>
+              onRequestClose={() => { this.props.navigation.navigate('gallery'); }}>
 
               <View style={styles.modal}>
                 <Text style={styles.text}>¡Gracias por calificar!</Text>
 
                 <TouchableOpacity onPress={() => {
-                  this.toggleModal(!this.state.modalVisible)
-                  this.props.navigation.navigate('login');
+                  this.toggleModa1();
+                  this.props.navigation.navigate('gallery');
                 }} style={styles.button}>
 
                   <Text style={styles.buttonText}>Entendido</Text>
                 </TouchableOpacity>
               </View>
-            </Modal>
+            </Modal> 
           </View>
 
           <View style={styles.reactions}>
