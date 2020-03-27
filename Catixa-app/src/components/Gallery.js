@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
@@ -26,7 +25,7 @@ export default class App extends Component<{}> {
         </View>
         <ImageSlider
           loop
-          autoPlayWithInterval={3000}
+          autoPlayWithInterval={5000}
           images={images}
           onPress={({ index }) => alert(index)}
           customSlide={({ index, item, style, width }) => (
@@ -36,7 +35,6 @@ export default class App extends Component<{}> {
               style={[
                 style,
                 styles.customSlide,
-                { backgroundColor: index % 2 === 0 ? 'white' : 'white' },
               ]}
             >
               <Image source={{ uri: item }} style={styles.customImage} />
@@ -73,23 +71,20 @@ export default class App extends Component<{}> {
 
 const styles = StyleSheet.create({
   container: {
+    justifyContent:'center',
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#182c4d',
+    alignItems: 'center'
   },
-  slider: { backgroundColor: '#000', height: 690 },
+  slider: { backgroundColor: '#182c4d', height: 'auto' },
   content1: {
     width: '100%',
-    height: 100,
-    marginBottom: 10,
-    backgroundColor: '#000',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#182c4d'
   },
   content2: {
-    width: '200%',
-    height: 100,
+    width: '100%',
     marginTop: 10,
-    backgroundColor: '#000',
+    backgroundColor: '#182c4d',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -116,7 +111,7 @@ const styles = StyleSheet.create({
     color: 'red',
   },
   customSlide: {
-    backgroundColor: 'green',
+    backgroundColor: '#182c4d',
     alignItems: 'center',
     justifyContent: 'center',
   },
