@@ -4,6 +4,9 @@ import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
 import Login from "views/examples/Login.js";
 import ListAdmins from "views/examples/ListAdmins.js";
+import ImageUpload from "views/examples/Upload";
+import Modal from "views/examples/Modal";
+
 
 var routes = [
   {
@@ -41,6 +44,22 @@ var routes = [
     name:"Administradores",
     icon:"ni ni-single-02 text-red",
     component: ListAdmins,
+    layout:"/admin"
+
+  },
+  {
+    path:"/ImageUpload",
+    name:"ImageUpload",
+    icon:"ni ni-single-02 text-red",
+    component: ImageUpload,
+    layout:"/admin"
+
+  },
+  {
+    path:"/Modal",
+    name:"Modal",
+    icon:"ni ni-single-02 text-red",
+    component: Modal,
     layout:"/admin"
 
   }

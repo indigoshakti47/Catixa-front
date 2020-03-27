@@ -108,7 +108,7 @@ class Profile extends React.Component {
                             />
                           </FormGroup>
                         </Col>
-                      </Row>
+                      </Row> 
                     </div>
                     <hr className="my-4" />
                     {/* Address */}
@@ -217,4 +217,4 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile;
+export default Profile; 
