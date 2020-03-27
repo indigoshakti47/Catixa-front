@@ -18,7 +18,7 @@ class Main extends Component<{}> {
 		return(
       <View style={styles.container}>
         <StatusBar
-           backgroundColor="#1c313a"
+           backgroundColor="#11cdef"
            barStyle="light-content"
          />
         <Routes isLoggedIn={isLoggedIn} />

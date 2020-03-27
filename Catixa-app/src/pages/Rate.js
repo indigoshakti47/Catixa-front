@@ -35,7 +35,9 @@ const getMyData = async () => {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this._pan = new Animated.Value(1.9 * DISTANCE);
+    this._pan = new Animated.Value(1.9 * DISTANCE, {duration:5000});
+    
+    
   }
 
   state = {
@@ -90,7 +92,7 @@ export default class App extends React.Component {
 
   updatePan(toValue) {
 
-    Animated.spring(this._pan, { toValue, friction: 7 }).start();
+    Animated.spring(this._pan, { toValue, friction: 7, duration:5000 }).start();
 
     getMyData();
 
@@ -265,10 +267,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   modal: {
-    flex: 1,
+    
     alignItems: 'center',
-    padding: 50,
-    position: 'absolute',
+    padding: 70,
+    position: 'relative',
     backgroundColor: 'white',
   },
   text: {
@@ -282,7 +284,7 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
   welcome: {
-    fontSize: 18,
+    fontSize: 19,
     textAlign: 'center',
     color: '#777',
     fontWeight: '600',
@@ -355,6 +357,3 @@ const styles = StyleSheet.create({
   }
 });
 
-/*setTimeout(() => {
-
-        */

@@ -23,13 +23,15 @@ export default class Login extends React.Component {
 
   render() {
     return (
+      <>
       
       <View style={styles.container}> 
-      <Logo />
+       <Logo />
         {this.state.errorMessage &&
           <Text style={{ color: 'red' }}>
             {this.state.errorMessage}
           </Text>}
+          
           <TextInput
           style={styles.textInput}
           autoCapitalize="none"
@@ -56,12 +58,13 @@ export default class Login extends React.Component {
 				</View>
 
       </View>
+      </>
     )
   }
 }
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#455a64',
+    backgroundColor: '#182c4d',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
@@ -70,28 +73,26 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     alignItems: 'flex-end',
     justifyContent: 'center',
-    paddingVertical: 16,
     flexDirection: 'row'
   },
   button: {
-    width: 300,
-    backgroundColor: '#1c313a',
-    borderRadius: 25,
+    width: 200,
+    backgroundColor: '#ff3000',
+    borderRadius: 35,
     marginVertical: 10,
     paddingVertical: 13,
-    borderRadius: 50,
-    marginTop: 18
+    marginTop: 58
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: '500',
     color: '#ffffff',
     textAlign: 'center',
-    borderRadius: 50,
+    borderRadius: 30,
   },
   textInput: {
     backgroundColor: '#6a7b83',
-    fontSize: 15,
+    fontSize: 17,
     fontWeight: '400',
     color: '#ffffff',
     height: 50,
@@ -99,8 +100,8 @@ const styles = StyleSheet.create({
     borderColor: '#6a7b83',
     borderRadius: 50,
     borderWidth: 1,
-    marginTop: 18,
-    textAlign: 'auto'
+    marginTop: 27,
+    textAlign: 'center'
   }
 });
 

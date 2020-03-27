@@ -10,9 +10,9 @@ export default class Logo extends Component<{}> {
 	render(){
 		return(
 			<View style={styles.container}>
-				<Image  style={{width:40, height: 70}}
-          			source={require('../images/logo.png')}/>
-          		<Text style={styles.logoText}>Catixa</Text>	
+				<Image  style={{width:250, height: 100}}
+          			source={require('../images/catixa_white.png')}/>
+          		
   			</View>
 			)
 	}
@@ -20,13 +20,8 @@ export default class Logo extends Component<{}> {
 
 const styles = StyleSheet.create({
   container : {
-    flexGrow: 1,
-    justifyContent:'flex-end',
+    flexGrow: 2.5,
+    justifyContent:'space-around',
     alignItems: 'center'
-  },
-  logoText : {
-  	marginVertical: 15,
-  	fontSize:18,
-  	color:'rgba(255, 255, 255, 0.7)'
   }
 });
