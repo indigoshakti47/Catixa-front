@@ -29,15 +29,13 @@ const getMyData = async () => {
         console.log(snapshot.val())
         cont = snapshot.numChildren();
       });
-  }, 500);
+  }, 2000);
 }
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this._pan = new Animated.Value(1.9 * DISTANCE, {duration:5000});
-    
-    
   }
 
   state = {
@@ -51,7 +49,7 @@ export default class App extends React.Component {
       onMoveShouldSetPanResponderCapture: () => true,
       onPanResponderGrant: (e, gestureState) => {
         this._pan.setOffset(this._pan._value);
-        this._pan.setValue(0);
+        this._pan.setValue(30);
       },
       onPanResponderMove: Animated.event([null, { dx: this._pan }]),
       onPanResponderRelease: () => {
@@ -76,13 +74,14 @@ export default class App extends React.Component {
           console.log(snapshot.val())
           userR = snapshot.val().userName;
         });
-    }, 500);
+    }, 1000);
 
     getMyData();
 
   }
 
   toggleModal() {
+    
     this.setState({ modalVisible: true });
   }
 
@@ -93,9 +92,9 @@ export default class App extends React.Component {
   updatePan(toValue) {
 
     Animated.spring(this._pan, { toValue, friction: 7, duration:5000 }).start();
-
+    
     getMyData();
-
+    setTimeout(() => {  console.log("Hold up!"); }, 3000);
     this.toggleModal()
 
     if (toValue == 0) {
@@ -190,6 +189,7 @@ export default class App extends React.Component {
                             inputRange,
                             outputRange: scaleOutputRange,
                             extrapolate: 'clamp',
+                            duration:4000
                           })
                         }]
                       }]}
@@ -201,11 +201,13 @@ export default class App extends React.Component {
                       inputRange,
                       outputRange: topOutputRange,
                       extrapolate: 'clamp',
+                      duration:3000
                     }),
                     color: this._pan.interpolate({
                       inputRange,
                       outputRange: colorOutputRange,
                       extrapolate: 'clamp',
+                      duration:2000
                     })
                   }]}>
                     {reaction.label}
@@ -219,6 +221,7 @@ export default class App extends React.Component {
                   inputRange: [0, END],
                   outputRange: [0, END],
                   extrapolate: 'clamp',
+                  duration:4000
                 })
               }]
             }]}>
@@ -244,6 +247,7 @@ export default class App extends React.Component {
                         inputRange,
                         outputRange,
                         extrapolate: 'clamp',
+                        duration:4000
                       })
                     }]}
                   />
