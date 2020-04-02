@@ -35,7 +35,7 @@ const getMyData = async () => {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this._pan = new Animated.Value(1.9 * DISTANCE, {duration:5000});
+    this._pan = new Animated.Value(1.9 * DISTANCE, { duration: 5000 });
   }
 
   state = {
@@ -81,7 +81,7 @@ export default class App extends React.Component {
   }
 
   toggleModal() {
-    
+
     this.setState({ modalVisible: true });
   }
 
@@ -91,10 +91,10 @@ export default class App extends React.Component {
 
   updatePan(toValue) {
 
-    Animated.spring(this._pan, { toValue, friction: 7, duration:5000 }).start();
-    
+    Animated.spring(this._pan, { toValue, friction: 7, duration: 5000 }).start();
+
     getMyData();
-    setTimeout(() => {  console.log("Hold up!"); }, 3000);
+    setTimeout(() => { console.log("Hold up!"); }, 3000);
     this.toggleModal()
 
     if (toValue == 0) {
@@ -137,7 +137,7 @@ export default class App extends React.Component {
           <View style={styles.line} />
 
           <View style={{ flex: 1 }}>
-            <Modal animationType={"slide"} 
+            <Modal animationType={"slide"}
               visible={this.state.modalVisible}
               onRequestClose={() => { this.props.navigation.navigate('gallery'); }}>
 
@@ -152,7 +152,7 @@ export default class App extends React.Component {
                   <Text style={styles.buttonText}>Entendido</Text>
                 </TouchableOpacity>
               </View>
-            </Modal> 
+            </Modal>
           </View>
 
           <View style={styles.reactions}>
@@ -189,7 +189,7 @@ export default class App extends React.Component {
                             inputRange,
                             outputRange: scaleOutputRange,
                             extrapolate: 'clamp',
-                            duration:4000
+                            duration: 4000
                           })
                         }]
                       }]}
@@ -201,13 +201,13 @@ export default class App extends React.Component {
                       inputRange,
                       outputRange: topOutputRange,
                       extrapolate: 'clamp',
-                      duration:3000
+                      duration: 3000
                     }),
                     color: this._pan.interpolate({
                       inputRange,
                       outputRange: colorOutputRange,
                       extrapolate: 'clamp',
-                      duration:2000
+                      duration: 2000
                     })
                   }]}>
                     {reaction.label}
@@ -221,7 +221,7 @@ export default class App extends React.Component {
                   inputRange: [0, END],
                   outputRange: [0, END],
                   extrapolate: 'clamp',
-                  duration:4000
+                  duration: 4000
                 })
               }]
             }]}>
@@ -247,7 +247,7 @@ export default class App extends React.Component {
                         inputRange,
                         outputRange,
                         extrapolate: 'clamp',
-                        duration:4000
+                        duration: 4000
                       })
                     }]}
                   />
@@ -271,7 +271,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   modal: {
-    
+
     alignItems: 'center',
     padding: 70,
     position: 'relative',
