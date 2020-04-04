@@ -1,17 +1,19 @@
-import  firebase from "firebase";
-import 'firebase/database';
+import * as firebase from "firebase/app";
+import 'firebase/firestore';
+import 'firebase/auth';
 
-var firebaseConfig = {
-    apiKey: "AIzaSyD575l_oaGodJjih78MAj8GGFWKagnYug8",
-    authDomain: "catixa-6cf9b.firebaseapp.com",
-    databaseURL: "https://catixa-6cf9b.firebaseio.com",
-    projectId: "catixa-6cf9b",
-    storageBucket: "catixa-6cf9b.appspot.com",
-    messagingSenderId: "1014629775674",
-    appId: "1:1014629775674:web:be7261f9d2e8dbfa4ab803",
-    measurementId: "G-JQL1ZS5371"
+
+export default function initFirebase() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyDPBB_1XiPWCYXbDvsyYzPLUCx-Vmyad8c",
+    authDomain: "catixa-rating.firebaseapp.com",
+    databaseURL: "https://catixa-rating.firebaseio.com",
+    projectId: "catixa-rating",
+    storageBucket: "catixa-rating.appspot.com",
+    messagingSenderId: "221258316336",
+    appId: "1:221258316336:web:4883d090c93a9715ba0bf5",
+    measurementId: "G-6S9W3DQ5EZ"
   };
-
   firebase.initializeApp(firebaseConfig);
 
-export default firebaseConfig;
+}

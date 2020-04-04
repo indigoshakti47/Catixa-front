@@ -1,6 +1,6 @@
 import React from 'react';
 import { PixelRatio, StyleSheet, Text, View, PanResponder, Animated, TouchableOpacity, TouchableHighlight } from 'react-native';
-import firebase from 'firebase'
+import firebase from 'firebase/app';
 import Modal from 'react-native-modal';
 
 const REACTIONS = [
@@ -15,22 +15,6 @@ const END = WIDTH - DISTANCE;
 
 var userR;
 var rate;
-var cont;
-
-
-
-const getMyData = async () => {
-  setTimeout(() => {
-    firebase
-      .database()
-      .ref('Rating/' + userR + '')
-      .once('value')
-      .then(snapshot => {
-        console.log(snapshot.val())
-        cont = snapshot.numChildren();
-      });
-  }, 2000);
-}
 
 export default class App extends React.Component {
   constructor(props) {
@@ -65,19 +49,6 @@ export default class App extends React.Component {
         this.updatePan(offset);
       }
     });
-    setTimeout(() => {
-      firebase
-        .database()
-        .ref('user-details/' + firebase.auth().currentUser.uid)
-        .once('value')
-        .then(snapshot => {
-          console.log(snapshot.val())
-          userR = snapshot.val().userName;
-        });
-    }, 1000);
-
-    getMyData();
-
   }
 
   toggleModal() {
@@ -90,37 +61,33 @@ export default class App extends React.Component {
   }
 
   updatePan(toValue) {
-
     Animated.spring(this._pan, { toValue, friction: 7, duration: 5000 }).start();
-
-    getMyData();
-    setTimeout(() => { console.log("Hold up!"); }, 3000);
     this.toggleModal()
 
     if (toValue == 0) {
-      rate = "Malo";
+      rate = 1;
     }
     if (toValue == 80) {
-      rate = "Regular";
+      rate = 2;
     }
     if (toValue == 160) {
-      rate = "Bueno";
+      rate = 3;
     }
     if (toValue == 240) {
-      rate = "Excelente";
+      rate = 4;
     }
 
-    firebase.database().ref('Rating/' + userR + '/' + (parseInt(cont) + 1)).set(
-      {
-        rate: rate
-      }
-    ).then(() => {
-      console.log('INSERTED !');
-    }).catch((error) => {
-      console.log(error);
-    });
+    var user = firebase.auth().currentUser;
+    if (user == null){
+      console.log("Ningun usuario ha iniciado sesion");
+      return;
+    }
 
-    <Modal />
+    firebase.firestore().collection('ratings').add({
+      user: user.uid,
+      rate: rate
+    }).then(console.log('INSERTED !')).catch(error => console.log(error));
+
   }
 
   render() {

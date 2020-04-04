@@ -1,4 +1,5 @@
 {
   "name": "Thalia",
-  "displayName": "Thalia"
+  "slug": "thalia",
+  "sdkVersion":"37.0.0"
 }
