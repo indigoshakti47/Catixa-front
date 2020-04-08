@@ -40,7 +40,8 @@ export default class App extends React.Component {
 
     firebase.firestore().collection('ratings').add({
       user: user.uid,
-      rate: rate
+      rate: rate,
+      createdAt: firebase.firestore.Timestamp.now()
     }).then(console.log('INSERTED !')).catch(error => console.log(error));
 
   }
