@@ -134,7 +134,6 @@
 				B0DB908AD8305CB0D149296C /* Pods-ThaliaTests.debug.xcconfig */,
 				52BB11EEEEB5754FC3F4A2F7 /* Pods-ThaliaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -290,6 +289,7 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = PRJB95DC46;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -308,6 +308,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -583,6 +584,8 @@
 			baseConfigurationReference = B0DB908AD8305CB0D149296C /* Pods-ThaliaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = PRJB95DC46;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -606,7 +609,9 @@
 			baseConfigurationReference = 52BB11EEEEB5754FC3F4A2F7 /* Pods-ThaliaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = PRJB95DC46;
 				INFOPLIST_FILE = ThaliaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

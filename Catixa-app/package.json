@@ -33,7 +33,13 @@
     "react-native-screens": "^2.4.0",
     "react-native-slideshow": "^1.0.1",
     "react-native-web": "~0.11.7",
-    "react-slideshow-image": "^1.4.0"
+    "react-slideshow-image": "^1.4.0",
+    "react-native-router-flux": "^4.2.0",
+    "redux": "^4.0.1",
+    "redux-form": "^8.2.4",
+    "redux-thunk": "^2.3.0",
+    "redux-persist": "^5.6.12",
+    "react-redux": "^7.1.0"
   },
   "devDependencies": {
     "babel-preset-expo": "~8.1.0",
@@ -44,13 +50,7 @@
     "eslint": "^5.0.0",
     "jest": "24.9.0",
     "metro-react-native-babel-preset": "0.56.4",
-    "react-native-router-flux": "^4.2.0",
-    "react-redux": "^7.1.0",
-    "react-test-renderer": "16.9.0",
-    "redux": "^4.0.1",
-    "redux-form": "^8.2.4",
-    "redux-persist": "^5.6.12",
-    "redux-thunk": "^2.3.0"
+    "react-test-renderer": "16.9.0"
   },
   "jest": {
     "preset": "react-native"

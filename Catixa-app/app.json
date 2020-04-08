@@ -1,5 +1,10 @@
 {
   "name": "Thalia",
   "slug": "thalia",
-  "sdkVersion":"37.0.0"
+  "sdkVersion":"37.0.0",
+  "expo": {
+    "name": "Thalia",
+    "slug": "thalia",
+    "sdkVersion":"37.0.0"
+  }
 }

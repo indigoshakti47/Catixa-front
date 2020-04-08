@@ -5,11 +5,12 @@ import {
   View,
   Image,
   TouchableHighlight,
+  Dimensions
 } from 'react-native';
 
 import ImageSlider from 'react-native-image-slider';
 
-export default class App extends Component<{}> {
+export default class App extends Component {
   render() {
     const images = [
       'https://placeimg.com/640/640/nature',
@@ -17,12 +18,9 @@ export default class App extends Component<{}> {
       'https://placeimg.com/640/640/animals',
       'https://placeimg.com/640/640/beer',
     ];
-
+    const screenDimension = Dimensions.get('window');
     return (
       <View style={styles.container} onStartShouldSetResponder={() => this.props.navigation.navigate('Rate')}>
-        <View style={styles.content1}>
-          <Text style={styles.contentText}></Text>
-        </View>
         <ImageSlider
           loop
           autoPlayWithInterval={5000}
@@ -37,7 +35,11 @@ export default class App extends Component<{}> {
                 styles.customSlide,
               ]}
             >
-              <Image source={{ uri: item }} style={styles.customImage} />
+              <Image source={{ uri: item }} style={{
+                width: screenDimension.width,
+                height: screenDimension.height + 20,
+                resizeMode: 'cover',
+              }} />
             </View>
           )}
 
@@ -60,9 +62,6 @@ export default class App extends Component<{}> {
             </View>
           )}
         />
-        <View style={styles.content2}>
-          <Text style={styles.contentText}></Text>
-        </View>
       </View>
     );
   }
@@ -114,10 +113,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#182c4d',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  customImage: {
-    width: 393,
-    height: 600,
-  },
+  }
 });
 
