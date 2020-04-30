@@ -9,22 +9,29 @@ import {
 } from 'react-native';
 
 import ImageSlider from 'react-native-image-slider';
-
+import firebase from 'firebase/app';
 export default class App extends Component {
   render() {
-    const images = [
-      'https://placeimg.com/640/640/nature',
-      'https://placeimg.com/640/640/people',
-      'https://placeimg.com/640/640/animals',
-      'https://placeimg.com/640/640/beer',
-    ];
+
+    const img = [];
+
+    firebase.firestore().collection('images').get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          img.push(doc.data().url);
+        });
+      })
+      .catch(err => {
+        console.log('Error getting documents', err);
+      });
+
     const screenDimension = Dimensions.get('window');
     return (
       <View style={styles.container} onStartShouldSetResponder={() => this.props.navigation.navigate('Rate')}>
         <ImageSlider
           loop
           autoPlayWithInterval={5000}
-          images={images}
+          images={img}
           onPress={({ index }) => alert(index)}
           customSlide={({ index, item, style, width }) => (
 
@@ -45,7 +52,7 @@ export default class App extends Component {
 
           customButtons={(position, move) => (
             <View style={styles.buttons}>
-              {images.map((image, index) => {
+              {img.map((image, index) => {
                 return (
                   <TouchableHighlight
                     key={index}
@@ -115,4 +122,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   }
 });
-

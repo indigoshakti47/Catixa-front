@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
   reactionText: {
     top: 20,
     fontSize: 14,
-    fontWeight: '900',
+    fontWeight: '800',
     textAlign: 'center',
     color: '#999',
     marginTop: 5,
