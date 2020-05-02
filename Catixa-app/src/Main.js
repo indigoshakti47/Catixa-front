@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 
 import Routes from './components/Routes';
 
-class Main extends Component<{}> {
+class Main extends Component {
 
 	render() {
     const {authData:{isLoggedIn}} = this.props;

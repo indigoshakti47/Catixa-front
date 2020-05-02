@@ -4,10 +4,10 @@ import firebase from 'firebase/app';
 import Modal from 'react-native-modal';
 
 const REACTIONS = [
-  { label: "Malo", src: require('./assets/worried.png'), bigSrc: require('./assets/worried_big.png') },
-  { label: "Regular", src: require('./assets/sad.png'), bigSrc: require('./assets/sad_big.png') },
-  { label: "Bueno", src: require('./assets/smile.png'), bigSrc: require('./assets/smile_big.png') },
-  { label: "Excelente", src: require('./assets/ambitious.png'), bigSrc: require('./assets/ambitious_big.png') },
+  { label: "Malo", src: require('./assets/Malo_color.png'), bigSrc: require('./assets/Malo_gris.png') },
+  { label: "Regular", src: require('./assets/Regular_color.png'), bigSrc: require('./assets/Regular_gris.png') },
+  { label: "Bueno", src: require('./assets/Bien_color.png'), bigSrc: require('./assets/Bien_gris.png') },
+  { label: "Excelente", src: require('./assets/Excelente_color.png'), bigSrc: require('./assets/Excelente_gris.png') },
 ];
 const WIDTH = Math.round(Dimensions.get('window').width);;
 const DISTANCE = WIDTH * .7 / REACTIONS.length;
