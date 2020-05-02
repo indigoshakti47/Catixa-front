@@ -5,7 +5,7 @@ import Login from '../pages/Login';
 import Rate from '../pages/Rate';
 import Gallery from './Gallery';
 
-export default class Routes extends Component<{}> {
+export default class Routes extends Component {
 	render() {
 		return(
 			<Router>

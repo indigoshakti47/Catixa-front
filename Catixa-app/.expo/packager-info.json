@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 18107,
-  "expoServerNgrokUrl": "https://v3-bw2.anonymous.catixa-app.exp.direct",
-  "packagerNgrokUrl": "https://packager.v3-bw2.anonymous.catixa-app.exp.direct",
-  "ngrokPid": 18118,
+  "packagerPid": 19269,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": 19006
 }

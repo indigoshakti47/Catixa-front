@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
 
 });
 
-class InputText extends Component<{}> {
+class InputText extends Component {
 
     state = {
         value: ""

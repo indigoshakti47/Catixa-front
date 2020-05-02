@@ -5,7 +5,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 
-export default class Loader extends Component<{}> {
+export default class Loader extends Component {
 
 
 	render() {
